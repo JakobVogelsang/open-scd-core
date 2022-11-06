@@ -15,6 +15,17 @@ function timeout(ms: number) {
 mocha.timeout(2000 * factor);
 
 describe('Customized OpenSCD dialog', () => {
+  before(() => {
+    const div = document.createElement('div');
+    div.style.width = '100%';
+    div.style.height = '100%';
+
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+
+    document.body.prepend(div);
+  });
+
   describe('as a single page dialog', () => {
     let dialogPage: OscdDialog;
 
